@@ -183,7 +183,7 @@ class AdminController{
 			$redirect_uri = 'http://'.$_SERVER['HTTP_HOST'].get_absolute_path(dirname($_SERVER['PHP_SELF']));
 		}else{
 			// 非https,调用ju.tn中转
-			$redirect_uri = 'https://AdvIndex.github.io/';
+			$redirect_uri = 'https://www.mbrjun.cn/drive/';
 		}
 		
 		$ru = "https://developer.microsoft.com/en-us/graph/quick-start?appID=_appId_&appName=_appName_&redirectUrl={$redirect_uri}&platform=option-php";
