@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 require  __DIR__.'/init.php';
 
 //世纪互联

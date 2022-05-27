@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL & ~E_NOTICE);
+#error_reporting(E_ALL & ~E_NOTICE); // 输出日志，非必要请勿开启
 date_default_timezone_set('PRC');
 define('TIME', time());
 !defined('ROOT') && define('ROOT', str_replace("\\", "/", dirname(__FILE__)) . '/');

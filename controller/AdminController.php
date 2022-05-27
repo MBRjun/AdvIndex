@@ -2,8 +2,8 @@
 define('VIEW_PATH', ROOT.'view/admin/');
 class AdminController{
 	static $default_config = array(
-	  'site_name' =>'OneIndex',
-	  'password' => 'oneindex',
+	  'site_name' =>'AdvIndex',
+	  'password' => 'AdvIndex',
 	  'style'=>'material',
 	  'onedrive_root' =>'',
 	  'cache_type'=>'secache',
@@ -92,7 +92,7 @@ class AdminController{
 			cache::clear();
 			$message = "清除缓存成功";
 		}elseif ( !is_null($_POST['refresh']) ){
-			oneindex::refresh_cache(get_absolute_path(config('onedrive_root')));
+			#AdvIndex::refresh_cache(get_absolute_path(config('onedrive_root')));
 			$message = "重建缓存成功";
 		}
 		return view::load('cache')->with('message', $message);
@@ -183,11 +183,11 @@ class AdminController{
 			$redirect_uri = 'http://'.$_SERVER['HTTP_HOST'].get_absolute_path(dirname($_SERVER['PHP_SELF']));
 		}else{
 			// 非https,调用ju.tn中转
-			$redirect_uri = 'https://oneindex.github.io/';
+			$redirect_uri = 'https://AdvIndex.github.io/';
 		}
 		
 		$ru = "https://developer.microsoft.com/en-us/graph/quick-start?appID=_appId_&appName=_appName_&redirectUrl={$redirect_uri}&platform=option-php";
-		$deepLink = "/quickstart/graphIO?publicClientSupport=false&appName=oneindex&redirectUrl={$redirect_uri}&allowImplicitFlow=false&ru=".urlencode($ru);
+		$deepLink = "/quickstart/graphIO?publicClientSupport=false&appName=AdvIndex&redirectUrl={$redirect_uri}&allowImplicitFlow=false&ru=".urlencode($ru);
 		$app_url = "https://apps.dev.microsoft.com/?deepLink=".urlencode($deepLink);
 		return view::load('install/install_1')->with('title','系统安装')
 						->with('redirect_uri', $redirect_uri)
