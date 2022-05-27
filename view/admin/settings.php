@@ -4,7 +4,7 @@
 <div class="mdui-container-fluid">
 
 	<div class="mdui-typo">
-	  <h1> 基本设置 <small>设置OneIndex基本参数</small></h1>
+	  <h1> 基本设置 <small>设置AdvIndex基本参数</small></h1>
 	</div>
 	<form action="" method="post">
 		<div class="mdui-textfield">

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
-	<title>OneIndex 系统管理</title>
+	<title>AdvIndex 系统管理</title>
 	<link rel="stylesheet" href="https://cos.mbrjun.cn/assets/mdui/mdui.min.css" integrity="sha256-lCFxSSYsY5OMx6y8gp8/j6NVngvBh3ulMtrf4SX5Z5A=" crossorigin="anonymous">
 	<script src="https://cos.mbrjun.cn/assets/mdui/mdui.min.js" integrity="sha256-dZxrLDxoyEQADIAGrWhPtWqjDFvZZBigzArprSzkKgI=" crossorigin="anonymous"></script>
 	<script>$ = mdui.JQ;</script>
@@ -12,7 +12,7 @@
 <header class="mdui-appbar mdui-appbar-fixed">
   <div class="mdui-toolbar mdui-color-theme">
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer', swipe: true}"><i class="mdui-icon material-icons">menu</i></span>
-    <a href="./" target="_blank" class="mdui-typo-headline mdui-hidden-xs">OneIndex</a>
+    <a href="./" target="_blank" class="mdui-typo-headline mdui-hidden-xs">AdvIndex</a>
     <div class="mdui-toolbar-spacer"></div>
     <a href="<?php echo $root?>?/logout"><i class="mdui-icon material-icons">&#xe8ac;</i> 登出</a>
   </div>

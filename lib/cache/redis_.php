@@ -13,23 +13,23 @@ class redis_{
         }
 
         function get($key){
-                $gRefreshTime = $this->redis->get("OneIndex_gRefreshTime");
-                $key = "OneIndex_$gRefreshTime\_" . $key;
+                $gRefreshTime = $this->redis->get("AdvIndex_gRefreshTime");
+                $key = "AdvIndex_$gRefreshTime\_" . $key;
                 $data = $this->redis->get($key);
                 return unserialize($data) ?: null;
         }
 
         function set($key, $value=null, $expire=600){
-                $gRefreshTime = $this->redis->get("OneIndex_gRefreshTime");
+                $gRefreshTime = $this->redis->get("AdvIndex_gRefreshTime");
                 if (empty($gRefreshTime)) {
                         $gRefreshTime = time();
-                        $this->redis->set("OneIndex_gRefreshTime", $gRefreshTime);
+                        $this->redis->set("AdvIndex_gRefreshTime", $gRefreshTime);
                 }
-                $key = "OneIndex_$gRefreshTime\_" . $key;
+                $key = "AdvIndex_$gRefreshTime\_" . $key;
                 return $this->redis->set($key, serialize($value), $expire);
         }
 
         function clear(){
-                $this->redis->set("OneIndex_gRefreshTime", $gRefreshTime);
+                $this->redis->set("AdvIndex_gRefreshTime", $gRefreshTime);
         }
 }

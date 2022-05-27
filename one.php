@@ -11,7 +11,7 @@ class one{
 	}
 
 	static function cache_refresh(){
-		oneindex::refresh_cache(get_absolute_path(config('onedrive_root')));
+		AdvIndex::refresh_cache(get_absolute_path(config('onedrive_root')));
 	}
 
 	static function token_refresh(){
@@ -190,7 +190,7 @@ if(is_callable(['one',$action])){
 	exit();
 }
 ?>
-oneindex commands :
+AdvIndex commands :
  cache
   cache:clear    	clear cache
   cache:refresh  	refresh cache

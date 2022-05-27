@@ -32,7 +32,7 @@
 <body class="mdui-theme-primary-blue-grey mdui-theme-accent-blue">
 	<header class="mdui-appbar mdui-color-theme">
 		<div class="mdui-toolbar mdui-container">
-			<a href="/" class="mdui-typo-headline">oneindex</a>
+			<a href="/" class="mdui-typo-headline">AdvIndex</a>
 			<i class="mdui-icon material-icons mdui-icon-dark" style="margin:0;">chevron_right</i>
 			<a href="javascript:;" >admin</a>
 			<i class="mdui-icon material-icons mdui-icon-dark" style="margin:0;">chevron_right</i>

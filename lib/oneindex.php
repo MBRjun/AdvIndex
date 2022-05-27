@@ -1,5 +1,5 @@
 <?php
-	class oneindex{
+	class AdvIndex{
 		static $dir = array();
 		static $file = array();
 		static $thumb = array();
