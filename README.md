@@ -2,7 +2,7 @@
 基于 OneIndex 的 OneDrive 网页版，支持自定义域名，查看文件夹大小，配置缓存，上传文件
 
 # 环境要求
-|PHP 版本|5.5, 5.6, 7.x|
+|PHP 版本|5.5-8.1|
 |---|---|
 |PHP 扩展|curl|
 |推荐使用|https|
@@ -25,3 +25,8 @@ if (!-f $request_filename){
 	    rewrite ^/(.*) /?/$1 last;
 	}
   ```
+
+# 缓存器
+支持 ``secache``, ``filecache``, ``Memcache``, ``Redis``  
+⭐ 正在适配 ``Memcached``  
+⭐ AdvIndex 已支持连接到加密的 Redis 服务器
