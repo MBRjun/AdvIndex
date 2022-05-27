@@ -181,8 +181,23 @@ class AdminController{
 		}
 		if($_SERVER['HTTP_HOST'] == 'localhost'){
 			$redirect_uri = 'http://'.$_SERVER['HTTP_HOST'].get_absolute_path(dirname($_SERVER['PHP_SELF']));
-		}else{
-			// 非https,调用ju.tn中转
+		}
+		elseif(!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && !strcasecmp('quic', $_SERVER['HTTP_X_FORWARDED_PROTO'])){
+			$redirect_uri = 'https://'.$_SERVER['HTTP_HOST'].get_absolute_path(dirname($_SERVER['PHP_SELF']));
+		}
+		elseif(!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && !strcasecmp('https', $_SERVER['HTTP_X_FORWARDED_PROTO'])){
+			$redirect_uri = 'https://'.$_SERVER['HTTP_HOST'].get_absolute_path(dirname($_SERVER['PHP_SELF']));
+		}
+		elseif(!empty($_SERVER['HTTPS']) && 'off' != strtolower($_SERVER['HTTPS'])){
+			$redirect_uri = 'https://'.$_SERVER['HTTP_HOST'].get_absolute_path(dirname($_SERVER['PHP_SELF']));
+		}
+		elseif(!empty($_SERVER['SERVER_PORT']) && 443 == $_SERVER['SERVER_PORT']){
+			$redirect_uri = 'https://'.$_SERVER['HTTP_HOST'].get_absolute_path(dirname($_SERVER['PHP_SELF']));
+		}
+		elseif(!empty($_SERVER['HTTP_X_FORWARDED_PORT']) && 443 == $_SERVER['HTTP_X_FORWARDED_PORT']){
+			$redirect_uri = 'https://'.$_SERVER['HTTP_HOST'].get_absolute_path(dirname($_SERVER['PHP_SELF']));
+		}
+		else{
 			$redirect_uri = 'https://www.mbrjun.cn/drive/';
 		}
 		
